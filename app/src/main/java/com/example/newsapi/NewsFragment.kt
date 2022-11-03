@@ -11,21 +11,17 @@ import com.example.newsapi.viewmodels.NewsViewModel
 
 
 class NewsFragment : Fragment() {
-
     private val newsViewModel : NewsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Set observer to LiveData by ViewModel object
-
         newsViewModel.teslaLiveData.observe(viewLifecycleOwner) {
             newsViewModel.fetchData()
             Log.d("NewsFragment", "${it.totalResults} ${it.status} ${it.articles.size}")
         }
-
         return inflater.inflate(R.layout.fragment_news, container, false)
     }
 }

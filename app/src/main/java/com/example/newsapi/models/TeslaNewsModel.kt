@@ -2,7 +2,6 @@ package com.example.newsapi.models
 import com.google.gson.annotations.SerializedName
 
 // Data class which is converted from JSON
-
 data class TeslaModel(
     @SerializedName("articles")
     val articles: List<Article>,
